@@ -19,3 +19,10 @@ while True:
         print("Error: Stock quantity cannot be negative.")
         failed_entries += 1
         continue
+
+    inventory += stock
+    print(f"Stock added. Current inventory: {inventory}")
+
+    if inventory > 500:
+        print("ALERT: Overstock! Inventory exceeds 500 units.")
+        break
