@@ -7,3 +7,15 @@ while True:
     if stock.lower() == "quit":
         break
 
+
+    if not stock.isdigit():
+        print("Error: Please enter a valid integer.")
+        failed_entries += 1
+        continue
+
+    stock = int(stock)
+
+    if stock < 0:
+        print("Error: Stock quantity cannot be negative.")
+        failed_entries += 1
+        continue
