@@ -1,2 +1,9 @@
 inventory = 0
 failed_entries = 0
+
+while True:
+    stock = input("Enter stock quantity (or 'quit' to exit): ")
+
+    if stock.lower() == "quit":
+        break
+
