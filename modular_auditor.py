@@ -22,6 +22,10 @@ def process_delivery(current_total, new_value):
     return current_total + new_value
 
 
+def calculate_tax(amount):
+    return amount * 0.10
+
+
 def generate_report(total_units, failed_attempts):
     print("\n--- Inventory Report ---")
     print(f"Total Units Processed: {total_units}")
@@ -44,6 +48,7 @@ while True:
     inventory = process_delivery(inventory, stock)
 
     print(f"Stock added. Current inventory: {inventory}")
+    print(f"Tax for this delivery: ${tax:.2f}")
 
     if inventory > 500:
         print("ALERT: Overstock! Inventory exceeds 500 units.")
