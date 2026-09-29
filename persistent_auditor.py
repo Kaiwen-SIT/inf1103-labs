@@ -26,6 +26,11 @@ def load_inventory():
         return []
 
 
+def save_inventory(orders):
+    with open("inventory.txt", "w") as file:
+        for order in orders:
+            file.write(f"({order[0]}, '{order[1]}', {order[2]})\n")
+
 
 def display_orders(orders):
     print("\nCurrent Orders:\n")
@@ -88,5 +93,7 @@ display_orders(orders)
 
 add_order(orders)
 
-print(orders)
+save_inventory(orders)
+
+print("\nInventory successfully saved to inventory.txt")
 
